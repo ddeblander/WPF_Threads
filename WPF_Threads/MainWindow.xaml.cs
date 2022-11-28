@@ -43,7 +43,9 @@ namespace WPF_Threads
             p1 = new Person("George",2,r1);
             p2 = new Person("Jean",1,r2);
             p3 = new Person("Roger",5,r3);
-            ToTheMove(p1,m3);
+            ToTheMove(p1,m2);
+            ToTheMove(p2,m3);
+            ToTheMove(p3,m1);
         }
         private async Task ToTheMove(Person p,Magasin m)
         {
