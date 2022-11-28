@@ -1,0 +1,33 @@
+﻿<Window x:Class="WPF_Threads.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Threads"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1024">
+    <Grid Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+
+        <Label>Threads actif</Label>
+        <Label Grid.Column="1">Threads en attente</Label>
+        
+        <ListBox Grid.Row="1" x:Name="threadActif" />
+        <ListBox Grid.Row="1" Grid.Column="1" x:Name="threadAwait" />
+        
+
+
+
+
+    </Grid>
+</Window>
