@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,35 +10,43 @@ namespace WPF_Threads.Model
     internal class Person
     {
         private string name;
-        private uint kph;
-        public Person(string name, uint kph)
+        private float kph;
+        private Road r;
+        public Person(string name, float kph, Road r)
         {
-            this.name = name;
-            this.kph = kph;
+            Name = name;
+            Kph = kph;
+            R = r;
+            
         }
         public string Name
         {
             get { return name; }
-            set { this.name = name; }
+            set { name = value; }
         }
-        public uint Kph
+        public float Kph
         {
             get { return kph;}
-            set { this.kph = kph; }
+            set { kph = value; }
+        }
+        public Road R
+        {
+            get { return r; }
+            set { if (value != null) { r = value; } else Trace.WriteLine("Road null dans Person"); }
         }
 
-        public int Walking(Road rB, Road rE)
+        public float Walking( Road rE)
         {
-            if((rB != null)&&(rE != null))
+            if((rE != null)&&(r!= null))
             {
-                short xB =rB.X;
+                short xB =r.X;
                 short xE=rE.X;
-                short yB =rB.Y;
-                short yE =rB.Y;
+                short yB =r.Y;
+                short yE =rE.Y;
 
                 return((xE-xB)+(yE-yB));
             }
-            Console.WriteLine("une ou plusieurs Road sont null");
+            Trace.WriteLine("une Road est null dans Walking");
             return 0;
            
             

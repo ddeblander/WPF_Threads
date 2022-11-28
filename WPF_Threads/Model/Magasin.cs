@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace WPF_Threads.Model
 {
-    internal class magasin
+    internal class Magasin
     {
         private string name;
         private Road road;
 
-        public magasin(string name, Road road)
+        public Magasin(string name, Road road)
         {
-            this.name = name;
+            Name= name;
             if(road!= null)
             {
-                road.Name = name;
+                this.road=road;
             }
         }
         public string Name

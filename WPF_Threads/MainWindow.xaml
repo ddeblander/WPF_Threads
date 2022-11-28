@@ -11,6 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -20,10 +21,11 @@
         
 
         <Label>Threads actif</Label>
-        <Label Grid.Column="1">Threads en attente</Label>
+        <Label Grid.Column="1">Threads inactif</Label>
         
         <ListBox Grid.Row="1" x:Name="threadActif" />
-        <ListBox Grid.Row="1" Grid.Column="1" x:Name="threadAwait" />
+        <ListBox Grid.Row="1" Grid.Column="1" x:Name="threadInactif" />
+        <Button Grid.Row="2" x:Name="btnLaunch" Margin="0,5,0,0" Click="StartThreading">Start Walking</Button>
         
 
 
