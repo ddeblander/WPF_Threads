@@ -9,9 +9,9 @@ namespace WPF_Threads.Model
 {
     internal class Road
     {
-        string name;
-        uint km;
-        short x, y;
+        private string name;
+        private uint km;
+        private short x, y;
         public Road(string name,uint km, short x, short y) 
         {
             this.name = name;
@@ -25,6 +25,24 @@ namespace WPF_Threads.Model
             this.y = y;
 
         }
-        
+        public uint Km
+        {
+            get { return km; }
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public short X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        public short Y
+        {
+            get { return y; }
+            set { y = value; } 
+        }
     }
 }
