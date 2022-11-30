@@ -21,7 +21,7 @@ namespace WPF_Threads.ViewModele
             if (time > 1) 
             {
                 
-                return (int)time*1000;
+                return Math.Abs((int)time*1000);
             }
             return 1000;
         }
